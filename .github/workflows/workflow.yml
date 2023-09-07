@@ -21,4 +21,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_ACCESS_KEY }}
           aws-region: us-east-1
       - name: Copy to S3
-        run: aws s3 sync ./build/. s3://peoplediscoverybucket
+        run: aws s3 sync ./next/. s3://peoplediscoverybucket
