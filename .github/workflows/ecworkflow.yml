@@ -36,7 +36,7 @@ env:
   ECS_SERVICE: peoplediscoveryservice # set this to your Amazon ECS service name
   ECS_CLUSTER: peoplediscoverycluster # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION:
-    peoplediscoverytaskdefinition # set this to the path to your Amazon ECS task definition
+    arn:aws:ecs:eu-west-2:616742704851:task-definition/peoplediscoverytaskdefinition:1 # set this to the path to your Amazon ECS task definition
     # file, e.g. .aws/task-definition.json
   CONTAINER_NAME:
     peoplediscoverycontainer # set this to the name of the container in the
