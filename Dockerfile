@@ -1,10 +1,8 @@
-FROM node:16-alpine3.11
+FROM node:18
 
-WORKDIR /deploy
+WORKDIR  /usr/src/app
 
-ENV PORT 80
-
-COPY . /deploy
+COPY .  /usr/src/app
 
 RUN npm install
 
