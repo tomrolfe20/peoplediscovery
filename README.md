@@ -34,7 +34,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-# User Stories
+## User Stories
 - As a bjss member I want to get all academy members' name and Last Name from a specific intake cohort
 - As a bjss member I want to get all members in a Leadership role from a specific intake cohort
 - As a bjss member I want to get the description of a BJSS Team.
