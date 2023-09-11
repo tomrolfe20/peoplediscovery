@@ -1,3 +1,4 @@
+# People DiscoveryTool
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -32,3 +33,23 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+# User Stories
+- As a bjss member I want to get all academy members' name and Last Name from a specific intake cohort
+- As a bjss member I want to get all members in a Leadership role from a specific intake cohort
+- As a bjss member I want to get the description of a BJSS Team.
+
+## Database
+### AWS Set-Up
+
+Amazon RDS > Create instance of Postgres DB > Security Groups Set> inbound rules to allow team member's public IP addresses to access the DB instance/
+
+Amazon RDS instance endpoint link was then used as Host in PGAdmin. 
+
+### DB Schema
+- EmployeeTable: Name and last name of the employees
+- Cohort: month/Year of every cohort intake
+- Team: Defines the Leadership Group within BJSS
+
+All tables are then associated through their corresponding Foreigner Key to the employeeAssociation Table
+
