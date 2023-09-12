@@ -1,12 +1,14 @@
 import prisma from '@../../../lib/prisma.js';
 
-const something = await prisma.EmployeeTable.findMany();
+async function showEmployees() {
+  const query = await prisma.EmployeeTable.findMany();
+  let modifiedQuery = [];
 
-export default async function handler() {
-  const newUer = await prisma.EmployeeTable.findMany();
-  let arr = [];
-  for (let i = 0; i < newUer.length; i++) {
-    arr.push(newUer[i].firstName + ' ' + newUer[i].lastName);
+  for (let i = 0; i < query.length; i++) {
+    modifiedQuery.push(query[i].firstName + ' ' + query[i].lastName);
   }
-  return arr;
+
+  return modifiedQuery;
 }
+
+export default showEmployees;
