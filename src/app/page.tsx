@@ -9,6 +9,7 @@ export default async function Home() {
   const users: Array<User> = await data.json();
   console.log(users);
 
+
   return (
     <>
       <h1>Hello Hamish!!</h1>
@@ -17,7 +18,9 @@ export default async function Home() {
         <h1 key={user.employeeID}>
           Hello {user.firstName} {user.lastName}!!
         </h1>
+        
       ))}
+      
     </>
   );
 }
