@@ -17,8 +17,8 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
-        {children}
         <h1 className='font-bold text-4xl'>People Discovery</h1>
+        {children}
       </body>
     </html>
   );

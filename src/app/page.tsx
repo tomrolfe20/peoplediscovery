@@ -1,5 +1,5 @@
 'use client';
-import Search from './components/Search';
+import SearchData from './components/SearchData';
 import Data from './components/Data';
 import { useState, useEffect } from 'react';
 
@@ -18,7 +18,9 @@ export default function Home() {
 
   return (
     <>
-      <Search getSearchResults={(results: any) => setCoins(results)} />
+      <SearchData
+        getSearchResults={(results) => setCoins(results)}
+      ></SearchData>
       <Data data={coins} />
     </>
   );
