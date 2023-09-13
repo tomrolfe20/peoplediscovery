@@ -2,40 +2,29 @@
 import Image from 'next/image';
 import axios from 'axios';
 import React, { useState } from "react";
-//async function getPeopleold ():Promise<void> {
-  //console.log(value)
-  //  let data={content : value}
-  //let data = await axios.get('./api/sendpost')
-  //.then((response) => {
-    //console.log(response)
-//})
-//.catch((e) => { console.log(e)}
-//)
-// return data}
+
+//import handler from '../../pages/api/db/getUser'
+
 
 
 async function getPeople () {
-  //console.log(value)
-  //  let data={content : value}
-  const data = await fetch('/api/sendpost.ts');
+  //console.log('start main');
+  const data = await fetch('http://localhost:3000//api/db/getUser');
+  //console.log(data);
   const blogData = await data.json();
   return blogData;
-  
 }
     
  
 
 export default async function Home() {
-  // let variable = getPeople();
-  // const [value, setValue] = useState<string>('');
   
-  // setValue(variable);
-  const people = await getPeople();
+  const emp = await getPeople();
+  
   return (
     <>
       <h1>Hello Hamish!!</h1>
-      
-      <p>{people}</p>
+      {emp.message.map((user:any) => <p>{user.firstName}</p>)}
 
     </>
   );

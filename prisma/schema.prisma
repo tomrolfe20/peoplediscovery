@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Cohort {
+  cohortID Decimal   @id @db.Decimal
+  date     DateTime? @db.Date
+}
+
+model EmployeeTable {
+  employeeID Decimal @id @db.Decimal
+  firstName  String? @db.VarChar
+  lastName   String? @db.VarChar
+}
+
+model Team {
+  teamID   Decimal @id @db.Decimal
+  teamName String? @db.VarChar
+  teamDesc String? @db.VarChar
+}
+
+model employeeAssociation {
+  id         Decimal  @id @db.Decimal
+  employeeID Decimal? @db.Decimal
+  teamID     Decimal? @db.Decimal
+  cohortID   Decimal? @db.Decimal
+}
