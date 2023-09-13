@@ -1,21 +1,15 @@
+async function getData(search: string) {
+  const res = await fetch(`http://localhost:3000/api/hello/${search}`);
+  if (!res.ok) {
+    throw new Error('failed to fetch data');
+  }
+  return res.json();
+}
 export default async function Page({ params }: { params: { id: string } }) {
-  type Employee = {
-    firstName: string;
-    lastName: string;
-    employeeID: number;
-  };
-  const search = await import('../../../api/db/queryThree.js');
-  const data = await search.default(params.id);
-
+  const data = await getData(params.id);
   return (
-    <>
-      <div>
-        {data.map((employee: Employee) => (
-          <p>
-            {employee.firstName} {employee.lastName}
-          </p>
-        ))}
-      </div>
-    </>
+    <p>
+      {data[0].firstName} {data[0].lastName}
+    </p>
   );
 }
