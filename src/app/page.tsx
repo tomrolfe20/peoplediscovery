@@ -1,14 +1,25 @@
-export default async function Home() {
-  const user = await import('./db/query');
-  let show = await user.default();
+'use client';
+import Search from './components/Search';
+import Data from './components/Data';
+import { useState, useEffect } from 'react';
+
+export default function Home() {
+  const [coins, setCoins] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const response = await fetch('http://localhost:3000/api/hello/');
+      const dat = await response.json();
+      setCoins(dat);
+    };
+
+    getData();
+  }, []);
+
   return (
     <>
-      <h1>Good afternoon Hamish</h1>
-      <div>
-        {show.map((x) => (
-          <p>Good afternoon {x}</p>
-        ))}
-      </div>
+      <Search getSearchResults={(results: any) => setCoins(results)} />
+      <Data data={coins} />
     </>
   );
 }
