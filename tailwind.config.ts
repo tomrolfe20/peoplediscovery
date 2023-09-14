@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     colors: {
       bjssOne: '#041e42',
+      bjssPink: '#d90699',
       transparent: 'transparent',
       current: 'currentColor',
       black: colors.black,
