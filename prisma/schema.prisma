@@ -10,23 +10,29 @@ datasource db {
 model Cohort {
   cohortID Decimal   @id @db.Decimal
   date     DateTime? @db.Date
+  cohAssociate employeeAssociation[]
 }
 
 model EmployeeTable {
   employeeID Decimal @id @db.Decimal
   firstName  String? @db.VarChar
   lastName   String? @db.VarChar
+  empAssociate employeeAssociation[]
 }
 
 model Team {
   teamID   Decimal @id @db.Decimal
   teamName String? @db.VarChar
   teamDesc String? @db.VarChar
+  teamAssociate employeeAssociation[]
 }
 
 model employeeAssociation {
   id         Decimal  @id @db.Decimal
   employeeID Decimal? @db.Decimal
+  empAssociate EmployeeTable? @relation(fields: [employeeID], references: [employeeID])
   teamID     Decimal? @db.Decimal
+  teamAssociate Team? @relation(fields: [teamID], references: [teamID])
   cohortID   Decimal? @db.Decimal
+  cohAssociate Cohort? @relation(fields: [cohortID], references: [cohortID])
 }
