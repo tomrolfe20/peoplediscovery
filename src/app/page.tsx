@@ -4,13 +4,13 @@ import Data from './components/Data';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
-  const [data, setData] = useState([]);
+  const [coins, setCoins] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
       const response = await fetch('http://localhost:3000/api/hello/');
       const dat = await response.json();
-      setData(dat);
+      setCoins(dat);
     };
 
     getData();
@@ -18,8 +18,10 @@ export default function Home() {
 
   return (
     <>
-      <SearchData getSearchResults={(results) => setData(results)}></SearchData>
-      <Data data={data} />
+      <SearchData
+        getSearchResults={(results) => setCoins(results)}
+      ></SearchData>
+      <Data data={coins} />
     </>
   );
 }
