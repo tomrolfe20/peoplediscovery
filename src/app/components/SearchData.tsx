@@ -24,7 +24,7 @@ export default function SearchCoins({ getSearchResults }) {
   };
 
   return (
-    <div className=' my-20'>
+    <div className=' my-5'>
       <form
         className='flex flex justify-center items-center space-x-4'
         onSubmit={handleSubmit}

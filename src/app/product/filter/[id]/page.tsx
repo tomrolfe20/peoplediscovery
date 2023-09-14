@@ -8,8 +8,10 @@ async function getData(search: string) {
 export default async function Page({ params }: { params: { id: string } }) {
   const data = await getData(params.id);
   return (
-    <p>
-      {data[0].firstName} {data[0].lastName}
-    </p>
+    <div className='flex justify-center items-center my-20'>
+      <p className='font-bold text-3xl'>
+        {data[0].firstName} {data[0].lastName}
+      </p>
+    </div>
   );
 }
