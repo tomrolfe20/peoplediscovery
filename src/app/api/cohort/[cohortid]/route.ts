@@ -6,7 +6,7 @@ export async function GET(request: Request, { params }) {
     where: {
       empAssociate: {
         some: {
-          cohortAssociate: {
+          cohAssociate: {
             cohortID: id,
           },
         },

@@ -19,6 +19,10 @@ export default function SearchCoins({ getSearchResults }) {
   return (
     <div className='text-center my-20'>
       <form onSubmit={handleSubmit}>
+        <select name='languages' id='lang'>
+          <option value='javascript'>Employee ID</option>
+          <option value='php'>Cohort ID</option>
+        </select>
         <input
           className='text-black border-2 border-black rounded-full px-3 py-2'
           type='text'
