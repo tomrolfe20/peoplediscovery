@@ -5,12 +5,13 @@ import { useState } from 'react';
 
 export default function SearchCoins({ getSearchResults }) {
   const [query, setQuery] = useState('');
-  const [route, setRoute] = useState('');
+  const [route, setRoute] = useState('/api/users/');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const response = await fetch(route + query);
+    const directory = route + query;
+    console.log('the directory', directory);
+    const response = await fetch(directory);
 
     const data = await response.json();
 
