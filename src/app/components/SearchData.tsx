@@ -5,23 +5,29 @@ import { useState } from 'react';
 
 export default function SearchCoins({ getSearchResults }) {
   const [query, setQuery] = useState('');
+  const [route, setRoute] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`/api/users/${query}`);
+    const response = await fetch(route + query);
 
-    const coin = await response.json();
+    const data = await response.json();
 
-    getSearchResults(coin);
+    getSearchResults(data);
+  };
+
+  const onDropdownChange = async (e) => {
+    const change = e.target.value;
+    setRoute(change);
   };
 
   return (
     <div className='text-center my-20'>
       <form onSubmit={handleSubmit}>
-        <select name='languages' id='lang'>
-          <option value='javascript'>Employee ID</option>
-          <option value='php'>Cohort ID</option>
+        <select name='filter' onChange={onDropdownChange}>
+          <option value='/api/users/'>Employee ID</option>
+          <option value='/api/cohort/'>Cohort ID</option>
         </select>
         <input
           className='text-black border-2 border-black rounded-full px-3 py-2'
