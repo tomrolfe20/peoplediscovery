@@ -11,9 +11,9 @@ export default function SearchCoins({ getSearchResults }) {
 
     const response = await fetch(`/api/users/${query}`);
 
-    const dat = await response.json();
+    const coin = await response.json();
 
-    getSearchResults(dat);
+    getSearchResults(coin);
   };
 
   return (
