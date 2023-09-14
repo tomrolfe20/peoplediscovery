@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import colors from 'tailwindcss/colors';
 
 const config: Config = {
   content: [
@@ -9,6 +10,20 @@ const config: Config = {
   theme: {
     colors: {
       bjssOne: '#041e42',
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: colors.black,
+      white: colors.white,
+      emerald: colors.emerald,
+      indigo: colors.indigo,
+      yellow: colors.yellow,
+      stone: colors.warmGray,
+      sky: colors.lightBlue,
+      neutral: colors.trueGray,
+      gray: colors.coolGray,
+      slate: colors.blueGray,
+      lime: colors.lime,
+      rose: colors.rose,
     },
     extend: {
       backgroundImage: {

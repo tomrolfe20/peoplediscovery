@@ -5,9 +5,14 @@ export default function Data({ data }: { data: any }) {
     <>
       <ul className='grid grid-cols-4 mx-auto max-w-[1260px] gap-10'>
         {data.map((emp) => (
-          <Link href={`/product/filter/${emp.employeeID.toString()}`}>
-            {emp.firstName} {emp.lastName}
-          </Link>
+          <div className='transition duration-300 flex justify-center items-center hover:bg-black/60 rounded-full'>
+            <Link
+              className='font-bold '
+              href={`/product/filter/${emp.employeeID.toString()}`}
+            >
+              {emp.firstName} {emp.lastName}
+            </Link>
+          </div>
         ))}
       </ul>
     </>

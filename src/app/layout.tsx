@@ -18,8 +18,12 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <nav className='bg-bjssOne flex justify-between items-center h-20 p-4'>
-          <Link href={'/'} className='font-bold text-3xl text-white'>
+        <nav className='bg-bjssOne flex justify-between h-20 p-4'>
+          <Link
+            rel='preload'
+            href={'/'}
+            className='font-bold text-white text-3xl '
+          >
             People Discovery
           </Link>
         </nav>
