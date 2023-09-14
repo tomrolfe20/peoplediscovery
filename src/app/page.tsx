@@ -8,7 +8,7 @@ export default function Home() {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await fetch('http://localhost:3000/api/hello/');
+      const response = await fetch('http://localhost:3000/api/users/');
       const dat = await response.json();
       setCoins(dat);
     };

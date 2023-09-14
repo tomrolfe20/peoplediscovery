@@ -1,5 +1,5 @@
 async function getData(search: string) {
-  const res = await fetch(`http://localhost:3000/api/hello/${search}`);
+  const res = await fetch(`http://localhost:3000/api/users/${search}`);
   if (!res.ok) {
     throw new Error('failed to fetch data');
   }

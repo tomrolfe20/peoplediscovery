@@ -9,7 +9,7 @@ export default function SearchCoins({ getSearchResults }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`/api/hello/${query}`);
+    const response = await fetch(`/api/users/${query}`);
 
     const coin = await response.json();
 
