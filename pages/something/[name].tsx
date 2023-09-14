@@ -2,13 +2,6 @@
 // import { useParams } from 'next/navigation';
 import '../../src/app/globals.css'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  Typography,
-  Button,
-} from "@material-tailwind/react";
 
 type User = {
   employeeID: string;
